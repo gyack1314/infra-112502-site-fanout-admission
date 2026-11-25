@@ -1,0 +1,14 @@
+{"at":0,"kind":"capacity","record":{"region":"west","pool":3,"per_service":{"serial":2,"parts":1},"floor":1,"latency":{"serial":2,"parts":4},"scope":"mine"}}
+{"at":0,"kind":"capacity","record":{"region":"central","pool":2,"per_service":{"serial":1,"parts":1},"floor":1,"latency":{"serial":3,"parts":5},"scope":"mine"}}
+{"at":1,"kind":"request","record":{"id":"scan","class":"bulk","scope":"mine","regions":["west","central"],"deadline":18,"hedge_after":3,"items":[{"id":"s","service":"serial","required":true},{"id":"p","service":"parts","required":false,"depends":["s"]}]}}
+{"at":5,"kind":"wake","record":{}}
+{"at":6,"kind":"request","record":{"id":"urgent","class":"urgent","scope":"mine","regions":["west","central"],"deadline":14,"hedge_after":4,"items":[{"id":"s","service":"serial","required":true},{"id":"p","service":"parts","required":false,"depends":["s"]}]}}
+{"at":7,"kind":"reply","record":{"request":"scan","item":"s","region":"west","attempt":1,"state":"done","value":"BX"}}
+{"at":8,"kind":"reply","record":{"request":"scan","item":"s","region":"central","attempt":1,"state":"done","value":"BX"}}
+{"at":9,"kind":"reply","record":{"request":"urgent","item":"s","region":"west","attempt":1,"state":"done","value":"CX"}}
+{"at":10,"kind":"cancel","record":{"id":"scan"}}
+{"at":11,"kind":"restart","record":{}}
+{"at":12,"kind":"inspect","record":{"region":"west"}}
+{"at":13,"kind":"reply","record":{"request":"scan","item":"p","region":"west","attempt":1,"state":"stopped"}}
+{"at":14,"kind":"wake","record":{}}
+{"at":15,"kind":"inspect","record":{"request":"urgent"}}

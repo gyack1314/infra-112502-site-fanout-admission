@@ -1,0 +1,11 @@
+{"at":0,"kind":"capacity","record":{"region":"local","pool":1,"per_service":{"serial":1},"floor":1,"latency":{"serial":2},"scope":"west-mine"}}
+{"at":0,"kind":"capacity","record":{"region":"external","pool":5,"per_service":{"serial":5},"floor":0,"latency":{"serial":1},"scope":"remote-mine"}}
+{"at":0,"kind":"capacity","record":{"region":"slow","pool":5,"per_service":{"serial":5},"floor":0,"latency":{"serial":12},"scope":"west-mine"}}
+{"at":1,"kind":"request","record":{"id":"hot","class":"urgent","scope":"west-mine","regions":["local","external","slow"],"deadline":9,"hedge_after":3,"items":[{"id":"s","service":"serial","required":true}]}}
+{"at":4,"kind":"wake","record":{}}
+{"at":5,"kind":"reply","record":{"request":"hot","item":"s","region":"local","attempt":1,"state":"silent"}}
+{"at":6,"kind":"cancel","record":{"id":"hot"}}
+{"at":7,"kind":"restart","record":{}}
+{"at":8,"kind":"inspect","record":{"region":"local"}}
+{"at":10,"kind":"reply","record":{"request":"hot","item":"s","region":"local","attempt":1,"state":"done","value":"BX"}}
+{"at":11,"kind":"inspect","record":{"request":"hot"}}
